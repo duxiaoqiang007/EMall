@@ -43,25 +43,17 @@ Page({
     })
   },
   addTrolley(event){
-    let id = event.currentTarget.dataset.id
-    let productList = this.data.productList
-    let product
+    let productId = event.currentTarget.dataset.id
+
     wx.showLoading({
       title: '加入购物车中，请稍后',
     })
-    
-    for(let i=0,len=productList.length;i<len;i++){
-      if (productList[i].id === id){
-        product = productList[i]
-        break
-      }
-    }
 
     qcloud.request({
       url: config.service.addTrolley,
       login: true,
       method: 'PUT',
-      data: product,
+      data: { id: productId},
       success: res => {
         wx.hideLoading()
         let data = res.data

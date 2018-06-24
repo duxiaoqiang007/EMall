@@ -93,7 +93,7 @@ Page({
       url: config.service.addTrolley,
       login: true,
       method: 'PUT',
-      data: this.data.product,
+      data: { id: this.data.product.id},
       success: res => {
         wx.hideLoading()
         let data = res.data
