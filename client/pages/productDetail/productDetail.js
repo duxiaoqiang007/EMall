@@ -84,5 +84,38 @@ Page({
         })
       }
     })
+  },
+  addTrolley(){
+    wx.showLoading({
+      title: '加入购物车中，请稍后',
+    })
+    qcloud.request({
+      url: config.service.addTrolley,
+      login: true,
+      method: 'PUT',
+      data: this.data.product,
+      success: res => {
+        wx.hideLoading()
+        let data = res.data
+        if (!data.code) {
+          wx.showToast({
+            title: '加入购物车成功',
+          })
+        } else {
+          wx.showToast({
+            icon: 'none',
+            title: '加入购物车失败，请重试',
+          })
+        }
+      },
+      fail: (error) => {
+        console.log(error)
+        wx.hideLoading()
+        wx.showToast({
+          icon: 'none',
+          title: '加入购物车失败了，请重试',
+        })
+      }
+    })  
   }
 })

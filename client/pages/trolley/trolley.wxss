@@ -24,3 +24,153 @@
   width: 646rpx;
   text-align: center;
 }
+.allChooseAndEdit{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 60rpx;
+  margin: 20rpx 20rpx 20rpx 40rpx;
+}
+.checkBg{
+  width:50rpx;
+  height: 50rpx; 
+  background: yellow;
+  border-radius: 50%;
+  align-self: center;
+}
+.uncheckBg{
+  width:50rpx;
+  height: 50rpx; 
+  background: grey;
+  border-radius: 50%;
+  align-self: center;  
+}
+.check{
+  width: 38rpx;
+  height: 30rpx;
+  margin: 10rpx 6rpx;
+}
+
+.QXText{
+  flex: 1;
+  text-align: left;
+  padding-left: 20rpx;
+  font-size: 30rpx;
+  line-height: 42rpx;
+  opacity: 0.8;
+  font-weight: bold;
+}
+.BJbtn{
+  font-size: 30rpx;
+  line-height: 42rpx;
+  opacity: 0.8;
+  font-weight: bold;
+  width: 100rpx;
+  background:#FFFFFF;
+  border-radius:10rpx;
+  text-align:center;
+}
+.product-card{
+  margin:0 20rpx;
+  padding-bottom: 20rpx;
+  padding-left: 20rpx;
+  position: relative;
+  height: 200rpx;
+  display: flex;
+  background: #FFFFFF; 
+  border-bottom: 1px solid rgba(151, 151, 151, 0.2);
+}
+.product-card:last-child{
+  border-bottom: none;
+  box-shadow: 0;
+}
+.product-image{
+  margin-left: 20rpx;
+  width:200rpx;
+  height: 200rpx;
+}
+.product-info{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin-left: 20rpx;
+}
+.product-name{
+  font-size:30rpx;
+  line-height:42rpx;
+  opacity:0.6;
+  font-weight:bold;
+  margin-top:20rpx;
+  margin-left:20rpx;
+}
+.product-price{
+  margin-left:10rpx;
+  margin-top:20rpx;
+  font-size:30rpx;
+  line-height:42rpx;
+  font-weight:bold;
+  opacity:0.8;
+}
+.product-count{
+  align-self: flex-end;
+  font-size: 30rpx;
+  line-height: 42rpx;
+  font-weight: bold;
+  opacity: 0.7;
+  text-align: right;
+  margin-right: 20rpx;
+  margin-top: 29rpx;
+  display: flex;
+  align-items: center;
+}
+.editCount{
+  border: 1rpx solid yellow;
+  border-radius: 50%;
+  width: 40rpx;
+  height: 40rpx;
+  text-align: center;
+  margin: 0rpx 10rpx;
+}
+.count{
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100rpx;
+  padding-left: 40rpx;
+  width: 710rpx;
+}
+.totalMoney{
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 20rpx;
+}
+.totaltext{
+  font-size: 30rpx;
+  line-height: 42rpx;
+  opacity: 0.6;
+}
+.paybtn{
+  width: 200rpx;
+  height: 100rpx;
+  background: #F5E069;
+  font-size: 35rpx;
+  line-height: 100rpx;
+  opacity: 0.8;
+  font-weight: bold;
+  text-align: center;
+}
+.unpaybtn{
+  width: 200rpx;
+  height: 100rpx;
+  background: #b08177;
+  font-size: 35rpx;
+  line-height: 100rpx;
+  opacity: 0.8;
+  font-weight: bold;
+  text-align: center;  
+}

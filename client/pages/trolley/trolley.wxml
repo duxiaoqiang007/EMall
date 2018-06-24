@@ -9,10 +9,58 @@
   </view>
   <button class='unlogin-btn' open-type='getUserInfo' bindgetuserinfo='onTapLogin'>微信登陆</button>
 </view>
-<view class='trolley-card' wx:else>
-  <image class='trolley-image' src='/images/trolley.png'></image>
-  <view class='trolley-text'>
-    <view>购物车是空的</view>
-    <view>快添加商品进来吧</view>
+<!-- 登陆状态 -->
+<view wx:else>
+  <!-- 购物车没有东西 -->
+  <view class='trolley-card' wx:if='{{trolleyList.length == 0}}'>
+    <image class='trolley-image' src='/images/trolley.png'></image>
+    <view class='trolley-text'>
+      <view>购物车是空的</view>
+      <view>快添加商品进来吧</view>
+    </view>
+  </view>
+  <!-- 购物车有东西 -->
+  <view wx:else>
+    <view class='allChooseAndEdit'>
+      <view class="{{isTrolleyTotalCheck?'checkBg':'uncheckBg'}}">
+        <image wx:if='{{isTrolleyTotalCheck}}' class='check' src='/images/check.png'></image>     
+      </view>
+      <view class='QXText'>全选</view>
+      <view class='BJbtn'>{{isTrolleyEdit ? '完成' : '编辑'}}</view> 
+    </view>
+    <scroll-view scroll-y scroll-with-animation enable-back-to-top>
+      <view class='product-card' wx:for='{{trolleyList}}' wx:key='id'>
+        <view class="{{trolleyCheckMap[item.id]?'checkBg':'uncheckBg'}}">
+          <image wx:if='{{!trolleyCheckMap[item.id]}}' class='check singalCheck' src=''></image>
+          <image wx:if='{{trolleyCheckMap[item.id]}}' class='check singalCheck' src='/images/check.png'></image>        
+        </view>    
+        <image class='product-image' src='{{item.image}}'></image>
+        <view class='product-info'>
+          <view class='product-name'>{{item.name}}</view>
+          <view class='product-price'>￥{{item.price}}</view>          
+        </view>
+        <view class='product-count'>
+          <view class='editCount' wx:if='{{isTrolleyEdit}}'>-</view>
+          <view class=''>×{{item.count}}</view>
+          <view class='editCount' wx:if='{{isTrolleyEdit}}'>+</view>        
+        </view>
+
+      </view>   
+    </scroll-view>
+    <view class='count'>
+      <view class="{{isTrolleyTotalCheck?'checkBg':'uncheckBg'}}">
+       <image wx:if='{{!isTrolleyTotalCheck}}' class='nocheck' src=''></image>
+       <image wx:if='{{isTrolleyTotalCheck}}' class='check' src='/images/check.png'></image>     
+      </view>
+      <view class='QXText'>全选</view>
+      <view class='totalMoney'>
+        <view class='totaltext'>总价</view> 
+        <view class='totalprice'>￥{{trolleyAccount}}</view>      
+      </view>
+      <view class="{{trolleyAccount>0?'paybtn':'unpaybtn'}}">结算</view>   
+    </view>
   </view>
 </view>
+
+
+

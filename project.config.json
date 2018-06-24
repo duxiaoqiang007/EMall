@@ -48,6 +48,12 @@
 					"name": "订单",
 					"pathName": "pages/order/order",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "购物车",
+					"pathName": "pages/trolley/trolley",
+					"query": ""
 				}
 			]
 		}

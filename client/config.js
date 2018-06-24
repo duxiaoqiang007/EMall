@@ -30,7 +30,9 @@ var config = {
         //创建订单
         addOrder: `${host}/weapp/order`,
         //获取订单
-        orderList: `${host}/weapp/order`
+        orderList: `${host}/weapp/order`,
+        //添加购物车
+        addTrolley:`${host}/weapp/trolley`
     }
 };
 

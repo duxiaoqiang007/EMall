@@ -7,7 +7,6 @@ Page({
    */
   data: {
     productList: []
-  
   },
 
   /**
@@ -43,53 +42,49 @@ Page({
       }
     })
   },
- 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
-  },
+  addTrolley(event){
+    let id = event.currentTarget.dataset.id
+    let productList = this.data.productList
+    let product
+    wx.showLoading({
+      title: '加入购物车中，请稍后',
+    })
+    
+    for(let i=0,len=productList.length;i<len;i++){
+      if (productList[i].id === id){
+        product = productList[i]
+        break
+      }
+    }
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
+    qcloud.request({
+      url: config.service.addTrolley,
+      login: true,
+      method: 'PUT',
+      data: product,
+      success: res => {
+        wx.hideLoading()
+        let data = res.data
+        if (!data.code) {
+          wx.showToast({
+            title: '加入购物车成功',
+          })
+        } else {
+          wx.showToast({
+            icon: 'none',
+            title: '加入购物车失败，请重试',
+          })
+        }
+      },
+      fail: (error) => {
+        console.log(error)
+        wx.hideLoading()
+        wx.showToast({
+          icon: 'none',
+          title: '加入购物车失败了，请重试',
+        })
+      }
+    })
   }
+  
 })
