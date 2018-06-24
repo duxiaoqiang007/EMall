@@ -1,0 +1,28 @@
+<image class='bg' src='/images/bg.png'></image>
+<view wx:if="{{!userInfo}}">
+  <view class='unlogin-card'>
+    <view class='unlogin-head'></view>
+    <view class='unlogin-info'>
+      <view class='unlogin-text'>未登陆</view>
+      <view class='unlogin-tips'>点击微信登陆</view>
+    </view>
+  </view>
+  <button class='unlogin-btn' open-type='getUserInfo' bindgetuserinfo='onTapLogin'>微信登陆</button>
+</view>
+<view class='user-card' wx:else>
+  <view class='user-info'>
+    <image class='user-head' src='{{userInfo.avatarUrl}}'></image>
+    <view class='user-name'>{{userInfo.nickName}}</view>
+  </view>
+  <view class='user-split'></view>
+  <view class='user-options'>
+    <view class='option'>
+      <view class='option-title'>收货地址</view>
+      <image class='option-arrow' src='/images/grey-arrow.png'></image>
+    </view>
+    <view class='option'>
+      <view class='option-title'>联系客服</view>
+      <image class='option-arrow' src='/images/grey-arrow.png'></image>
+    </view>    
+  </view>
+</view>

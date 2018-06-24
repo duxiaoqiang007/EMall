@@ -1,0 +1,26 @@
+.trolley-card{
+  position: relative;
+  margin:32rpx 52rpx 0;
+  height: 360rpx;
+  background: #FFFFFF;
+  box-shadow: 0 2rpx 13rpx 5rpx rgba(0,0,0,0.2);
+  border-radius: 13rpx;
+}
+.trolley-image{
+  position: absolute;
+  top: 140rpx;
+  left: 283rpx;
+  height: 80rpx;
+  width: 80rpx;
+  opacity: 0.4;
+}
+.trolley-text{
+  font-size: 30rpx;
+  line-height: 42rpx;
+  opacity: 0.4;
+  font-weight: bold;
+  position: absolute;
+  top:250rpx;
+  width: 646rpx;
+  text-align: center;
+}

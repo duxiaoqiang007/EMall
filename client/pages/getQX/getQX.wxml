@@ -1,0 +1,4 @@
+<image class='bg' src='/images/bg.png'></image>
+<image class='qx-image' src='/images/qx.jpg'></image>
+<button wx:if='{{ifOpen == false}}' class='qx-btn' open-type='openSetting' bindgetuserinfo='onopenSetting'>开启权限</button>
+<view wx:else  class='qx-btn' bindtap='tapBack'>返回</view> 

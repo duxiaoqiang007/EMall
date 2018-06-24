@@ -1,0 +1,55 @@
+{
+	"miniprogramRoot": "./client",
+	"qcloudRoot": "./server",
+	"setting": {
+		"newFeature": true
+	},
+	"appid": "wx9fdac4db7193ed29",
+	"projectname": "E.Mall",
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": -1,
+					"name": "商品详情",
+					"pathName": "pages/productDetail/productDetail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "用户中心",
+					"pathName": "pages/users/users",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "权限",
+					"pathName": "pages/getQX/getQX",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "订单",
+					"pathName": "pages/order/order",
+					"query": ""
+				}
+			]
+		}
+	}
+}

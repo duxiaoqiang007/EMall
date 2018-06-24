@@ -1,0 +1,17 @@
+.qx-image{
+  height: 600rpx;
+  width: 690rpx;
+  margin: 0 30rpx;
+}
+.qx-btn{
+  margin:34rpx auto 0;
+  width: 250rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  background: #F5E069;
+  border-radius: 10rpx;
+  font-size: 30rpx;
+  text-align: center;
+  color: #34373D;
+  font-weight: bold;
+}

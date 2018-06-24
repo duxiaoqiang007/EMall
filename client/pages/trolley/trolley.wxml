@@ -1,0 +1,18 @@
+<image class='bg' src='/images/bg.png'></image>
+<view wx:if="{{!userInfo}}">
+  <view class='unlogin-card'>
+    <view class='unlogin-head'></view>
+    <view class='unlogin-info'>
+      <view class='unlogin-text'>未登陆</view>
+      <view class='unlogin-tips'>点击微信登陆</view>
+    </view>
+  </view>
+  <button class='unlogin-btn' open-type='getUserInfo' bindgetuserinfo='onTapLogin'>微信登陆</button>
+</view>
+<view class='trolley-card' wx:else>
+  <image class='trolley-image' src='/images/trolley.png'></image>
+  <view class='trolley-text'>
+    <view>购物车是空的</view>
+    <view>快添加商品进来吧</view>
+  </view>
+</view>
