@@ -88,7 +88,7 @@
   
 }
 .product-comment{
-  margin:20rpx;
+  margin-top: 20rpx;
   width: 100rpx;
   height: 60rpx;
   line-height: 60rpx;

@@ -1,0 +1,12 @@
+<view class='product-card' >
+  <image class='product-image' src='{{product.image}}'></image>
+  <view class='product-info'>
+    <view class='product-name'>{{product.name}}</view>
+    <view class='product-price'>￥{{product.price}}</view>          
+  </view>
+</view>
+<view class='comment-card'>
+  <textarea placeholder='请填写你的评论' maxlength='255' class='comment-text' bindinput='onInput'></textarea>
+  <image class='comment-image' src='/images/image.png'></image>
+</view>
+<view bindtap='onTapAddComment' class="submitBtn {{!commentValue?'dis':''}}">提交评价</view>

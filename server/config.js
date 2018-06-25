@@ -22,7 +22,7 @@ const CONF = {
         user: 'root',
         db: 'cAuth',
         pass: 'wx9fdac4db7193ed29',
-        char: 'utf8mb4'
+        char: 'utf8mb4_unicode_ci'
     },
 
     cos: {

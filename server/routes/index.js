@@ -45,4 +45,6 @@ router.put('/trolley',validationMiddleware,controllers.trolley.add)
 router.get('/trolley',validationMiddleware,controllers.trolley.list)
 //跟新购物车列表
 router.post('/trolley',validationMiddleware,controllers.trolley.update)
+//添加评论
+router.put('/comment',validationMiddleware,controllers.comment.add)
 module.exports = router

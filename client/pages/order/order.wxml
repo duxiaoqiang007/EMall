@@ -18,7 +18,7 @@
     <view class='order-list' wx:esle>
       <view class='line'>
         <image class='line-black' src='/images/line-black.png'></image>
-        <view class='line-text'>已完成</view>  
+        <view class='line-text'>已完成</view>
       </view>
       <view class='order-list' wx:for='{{orderList}}' wx:for-item='block' wx:key='id'>
           <view class='product-card' wx:for='{{block.list}}'  wx:key='id'>
@@ -28,10 +28,9 @@
                 <view class='product-price'>￥{{item.price}}</view>          
               </view>
               <view class='product-opr'>
-                <navigator class='product-comment'>评价</navigator>
-                <view class='product-count'>×{{item.count}}</view>          
+              <navigator url="/pages/comment/comment?product_id={{item.product_id}}" class='product-comment'>评价</navigator>
+                <view class='product-count'>×{{item.count}}</view>        
               </view>
-
           </view> 
       </view>
     </view>  
