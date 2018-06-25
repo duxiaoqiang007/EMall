@@ -22,16 +22,15 @@
   <!-- 购物车有东西 -->
   <view wx:else>
     <view class='allChooseAndEdit'>
-      <view class="{{isTrolleyTotalCheck?'checkBg':'uncheckBg'}}">
+      <view bindtap='onTapTotalCheck' class="{{isTrolleyTotalCheck?'checkBg':'uncheckBg'}}">
         <image wx:if='{{isTrolleyTotalCheck}}' class='check' src='/images/check.png'></image>     
       </view>
-      <view class='QXText'>全选</view>
-      <view class='BJbtn'>{{isTrolleyEdit ? '完成' : '编辑'}}</view> 
+      <view class='QXText QXBJ'>全选</view>
+      <view bindtap='onTapIfEdit' class='BJbtn'>{{isTrolleyEdit ? '完成' : '编辑'}}</view> 
     </view>
     <scroll-view scroll-y scroll-with-animation enable-back-to-top>
       <view class='product-card' wx:for='{{trolleyList}}' wx:key='id'>
-        <view class="{{trolleyCheckMap[item.id]?'checkBg':'uncheckBg'}}">
-          <image wx:if='{{!trolleyCheckMap[item.id]}}' class='check singalCheck' src=''></image>
+        <view bindtap='onTapCheckSingal' data-id='{{item.id}}' class="{{trolleyCheckMap[item.id]?'checkBg':'uncheckBg'}}">
           <image wx:if='{{trolleyCheckMap[item.id]}}' class='check singalCheck' src='/images/check.png'></image>        
         </view>    
         <image class='product-image' src='{{item.image}}'></image>
@@ -40,16 +39,15 @@
           <view class='product-price'>￥{{item.price}}</view>          
         </view>
         <view class='product-count'>
-          <view class='editCount' wx:if='{{isTrolleyEdit}}'>-</view>
+          <view data-id='{{item.id}}' bindtap='onTapMin' class='editCount' wx:if='{{isTrolleyEdit}}'>-</view>
           <view class=''>×{{item.count}}</view>
-          <view class='editCount' wx:if='{{isTrolleyEdit}}'>+</view>        
+          <view data-id='{{item.id}}' bindtap='onTapAdd' class='editCount' wx:if='{{isTrolleyEdit}}'>+</view>        
         </view>
 
       </view>   
     </scroll-view>
     <view class='count'>
-      <view class="{{isTrolleyTotalCheck?'checkBg':'uncheckBg'}}">
-       <image wx:if='{{!isTrolleyTotalCheck}}' class='nocheck' src=''></image>
+      <view bindtap='onTapTotalCheck' class="{{isTrolleyTotalCheck?'checkBg':'uncheckBg'}}">
        <image wx:if='{{isTrolleyTotalCheck}}' class='check' src='/images/check.png'></image>     
       </view>
       <view class='QXText'>全选</view>
@@ -57,7 +55,7 @@
         <view class='totaltext'>总价</view> 
         <view class='totalprice'>￥{{trolleyAccount}}</view>      
       </view>
-      <view class="{{trolleyAccount>0?'paybtn':'unpaybtn'}}">结算</view>   
+      <view bindtap='buy' class="{{trolleyAccount>0?'paybtn':'unpaybtn'}}">结算</view>   
     </view>
   </view>
 </view>
