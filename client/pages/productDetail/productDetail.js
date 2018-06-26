@@ -6,7 +6,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    product:{}
+    product:{},
+    haveComment:true,
+    commentList:[]
   },
 
   /**
@@ -29,6 +31,7 @@ Page({
           this.setData({
             product: data.data
           })
+          this.getComment(ID)
         }
         else {
           setTimeout(()=>{
@@ -86,6 +89,36 @@ Page({
       }
     })
   },
+  getComment(ID){
+    qcloud.request({
+      url: config.service.commentList,
+      data:{
+        product_id: ID
+      },
+      success: res => {
+        wx.hideLoading()
+        let data = res.data
+        if (!data.code) {
+          this.setData({
+            commentList :data.data
+          })
+          console.log(data.data)
+        }
+        else {
+          wx.showLoading({
+            icon:'none',
+            title: '评论加载失败'
+          })
+        }
+      },
+      error: res => {
+        wx.showLoading({
+          icon: 'none',
+          title: '评论加载失败'
+        })
+      }
+    })
+  },
   addTrolley(){
     wx.showLoading({
       title: '加入购物车中，请稍后',
@@ -118,5 +151,17 @@ Page({
         })
       }
     })  
+  
+  
+  
+  
+  },
+  onTapCommentEntry(event){
+    let product = this.data.product
+    if(this.data.haveComment){
+      wx.navigateTo({
+        url: '/pages/commentList/commentList?id='+product.id+'&price='+product.price+'&name='+product.name+'&image='+product.image,
+      })
+    }
   }
 })

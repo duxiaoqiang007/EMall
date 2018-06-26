@@ -18,13 +18,14 @@
       <view class='advantage-text'>24小时内发货并配送运费险</view>
     </view>
   </view>
-  <view class='comment-entry'>
+  <view class='comment-entry' bindtap='onTapCommentEntry'>
     <view class='comment-btn'>
       <view class='comment-title'>已买评价</view>
-      <view class='comment-count'>1条</view>
-      <image class='comment-arrow' src='/images/grey-arrow.png'></image>
+      <view wx:if='{{commentList.length>0}}' class='comment-count'>{{commentList.length}}条</view>
+      <image wx:if='{{commentList.length>0}}' class='comment-arrow' src='/images/grey-arrow.png'></image>
     </view>
-    <view class='comment-preview'>啦啦啦啦啦啦啦</view>
+    <view wx:if='{{commentList.length>0}}' class='comment-preview'>{{commentList[0].content}}</view>
+    <view wx:if='{{commentList.length==0}}' class='comment-preview'>暂无评论。。。</view>
   </view>
 </view>
 <view class='opr-cnt'>

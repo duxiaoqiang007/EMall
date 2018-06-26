@@ -1,0 +1,91 @@
+.product-card{
+  margin: 20rpx;
+  position: relative;
+  height: 200rpx;
+  display: flex;
+  background: #FFFFFF; 
+  border-bottom: 1px solid rgba(151, 151, 151, 0.2); 
+  border-radius: 10rpx;
+}
+.product-image{
+  margin-left: 20rpx;
+  width:200rpx;
+  height: 200rpx;
+}
+.product-info{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.product-name{
+  font-size:30rpx;
+  line-height:42rpx;
+  opacity:0.6;
+  font-weight:bold;
+  margin-top:20rpx;
+  margin-left:20rpx;
+}
+.product-price{
+  margin-left:10rpx;
+  margin-top:20rpx;
+  font-size:30rpx;
+  line-height:42rpx;
+  font-weight:bold;
+  opacity:0.8;
+}
+.comment-count{
+  font-size: 30rpx;
+  line-height: 42rpx;
+  opacity: 0.6;
+  margin-left: 20rpx;
+}
+.comment-list{
+  display: flex;
+  flex-direction: column;
+  margin-top: 20rpx;
+}
+.comment-card{
+  border-bottom: 1px solid rgba(151, 151, 151, 0.2); 
+  border-radius: 13rpx;
+  display: flex;
+  flex-direction: row;
+  height: 200rpx;
+  margin-bottom: 20rpx;
+}
+.user-info{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.user-avatar{
+  height: 120rpx;
+  width: 120rpx;
+  border-radius: 50%;
+}
+.user-name{
+  margin-top: 10rpx;
+  font-size: 30rpx;
+  line-height: 42rpx;
+  opacity: 0.7;
+}
+.name-content{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-left: 20rpx;
+
+}
+.comment-time{
+  margin-right: 20rpx;
+  text-align: right;
+  font-size: 30rpx;
+  line-height: 42rpx;
+  opacity: 0.7;
+}
+.content{
+  margin-top: 20rpx;
+  font-size: 35rpx;
+  line-height: 49rpx;
+  opacity: 0.9;
+
+}

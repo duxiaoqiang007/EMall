@@ -38,7 +38,9 @@ var config = {
         //更新购物车列表
         trolleyList: `${host}/weapp/trolley`,
         //添加评论
-        comment:`${host}/weapp/comment`
+        comment:`${host}/weapp/comment`,
+        //获取评论列表
+        commentList:`${host}/weapp/comment`
     }
 };
 
